@@ -8,6 +8,7 @@ public class CalcGUI {
     int boardWidth = 360;// window width
     int boardHeight = 540;// window height
 
+    // Color for the window backgrouds and buttons
     Color customDarkGray = new Color(51, 63, 71);
     Color customLightGray = new Color(212, 212, 210);
     Color customDeepNavy = new Color(30, 58, 95);
@@ -93,6 +94,13 @@ public class CalcGUI {
                     String buttonValue = button.getText();
                     if(Arrays.asList(rightSymbols).contains(buttonValue)){
                         if(buttonValue == "="){
+                            if(displayLabel.getText().contains("√") && operator ==null){// show the sqrt value if the user press the equal button without using any operator
+                                    String text = displayLabel.getText().replace("√", "").trim();
+                                    double valueSQRT = Double.parseDouble(text);
+                                    double sqrt = Math.sqrt(valueSQRT);
+                                    A = String.valueOf(sqrt);
+                                    displayLabel.setText(A);
+                                }
                             if(A != null){
                                 if(displayLabel.getText().contains("√")){// remove sqrt symbols and convert the value
                                     String text = displayLabel.getText().replace("√", "").trim();
