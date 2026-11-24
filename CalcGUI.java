@@ -166,7 +166,7 @@ public class CalcGUI {
 
                         }
                     }
-                    else{// digits or .
+                    else{// Digits, .(Decimal), or Square root symbols
                         if(buttonValue == "."){
                             if(!displayLabel.getText().contains(buttonValue)){// to make the decimal symbols once if there wasn't
                                 displayLabel.setText(displayLabel.getText() + buttonValue);
