@@ -115,9 +115,10 @@ public class CalcGUI {
                                 numA = Double.parseDouble(A);
                                 numB = Double.parseDouble(B);
                                 }
-                                if(numB == 0 && operator == "÷"){// handdle the divide by zero error
+                                if(numB == 0 && operator == "÷"){// handle the divide by zero error
                                     displayLabel.setText("Undefined");
                                 }
+
                                 if(operator == "+"){
                                     displayLabel.setText(removeZeroDecimal(numA+numB));
                                 }
@@ -127,7 +128,7 @@ public class CalcGUI {
                                 else if(operator == "×"){
                                     displayLabel.setText(removeZeroDecimal(numA*numB));
                                 }
-                                else if(operator == "÷"){
+                                else if(numB !=0 &&operator == "÷"){
                                     displayLabel.setText(removeZeroDecimal(numA/numB));
                                 }
                                 clearAll();
